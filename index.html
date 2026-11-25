@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Niru: caderno de treino para Android</title>
+  <meta name="description" content="Niru registra força, cardio e alongamento no seu celular, sem conta e sem anúncios. Backup opcional no seu próprio Google Drive.">
+  <meta name="theme-color" content="#f5eee7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a100d" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Niru: o tempo, registrado">
+  <meta property="og:description" content="Caderno de treino para Android: força, cardio e alongamento, sem conta e sem anúncios.">
+  <meta property="og:image" content="img/hoje-claro.webp">
+  <link rel="icon" href="img/niru-simbolo.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/estedad.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem('niru-tema');
+      var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="top">
+    <a class="brand" href="./" aria-label="Niru, página inicial">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="30.5" cy="33.5" r="18.5" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="29" cy="35" r="10.5" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="28" cy="36" r="4" fill="#F2992B"/></svg>
+      niru
+    </a>
+    <nav aria-label="Seções">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#seus-dados">Seus dados</a>
+      <a class="keep" href="privacidade.html">Privacidade</a>
+      <button class="theme" type="button" aria-label="Trocar tema">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
+        <span>Escuro</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="titulo">
+      <div>
+        <h1 id="titulo">O tempo, registrado.</h1>
+        <p class="lede">Caderno de treino para Android. Força, cardio e alongamento num só lugar, guardados no seu celular, sem conta e sem anúncios.</p>
+        <p class="status"><i aria-hidden="true"></i>Em teste com um grupo pequeno de pessoas.</p>
+      </div>
+
+      <figure class="week" aria-label="Exemplo de semana: força 3 de 4 treinos, zona 2 com 96 de 105 minutos, alongar 2 de 3 sessões">
+        <svg class="rings" viewBox="0 0 64 64" aria-hidden="true">
+          <g fill="none" stroke-width="3.5">
+            <circle class="track" cx="32" cy="32" r="27"/>
+            <circle class="track" cx="30.5" cy="33.5" r="18.5"/>
+            <circle class="track" cx="29" cy="35" r="10.5"/>
+            <circle class="arc forca" cx="32" cy="32" r="27" pathLength="100" transform="rotate(-90 32 32)" style="--off: 25"/>
+            <circle class="arc cardio" cx="30.5" cy="33.5" r="18.5" pathLength="100" transform="rotate(-90 30.5 33.5)" style="--off: 8.6"/>
+            <circle class="arc alongar" cx="29" cy="35" r="10.5" pathLength="100" transform="rotate(-90 29 35)" style="--off: 33.3"/>
+          </g>
+          <circle class="dot" cx="28" cy="36" r="4"/>
+        </svg>
+        <ul class="legend">
+          <li><span class="key" style="background: var(--forca)"></span>Força<span><b>3</b><small>de 4 treinos</small></span></li>
+          <li><span class="key" style="background: var(--cardio)"></span>Zona 2<span><b>96</b><small>de 105 min</small></span></li>
+          <li><span class="key" style="background: var(--alongar)"></span>Alongar<span><b>2</b><small>de 3 sessões</small></span></li>
+        </ul>
+      </figure>
+    </section>
+
+    <section class="tour" id="como-funciona" aria-labelledby="tour-titulo">
+      <header>
+        <h2 id="tour-titulo">Do aquecimento ao último alongamento</h2>
+        <p>Cada tela mostra o número que importa naquele momento, e mais nada.</p>
+      </header>
+
+      <div class="stage">
+        <div class="stick" aria-hidden="true">
+          <div class="phone" id="phone">
+            <div class="screen">
+              <img data-shot="hoje" alt="" class="on">
+              <img data-shot="treino" alt="">
+              <img data-shot="descanso" alt="">
+              <img data-shot="cardio" alt="">
+              <img data-shot="alongar" alt="">
+              <img data-shot="evolucao" alt="">
+            </div>
+            <div class="bar"><span>9:41</span><svg viewBox="0 0 40 12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 5h2v6H9zM13 3h2v8h-2z"/><rect x="20" y="2" width="16" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="21.5" y="3.5" width="10" height="5" rx="1"/><rect x="37" y="4.5" width="1.6" height="3" rx=".6"/></svg></div>
+            <div class="pill"></div>
+          </div>
+        </div>
+
+        <ol class="steps">
+          <li class="step on" data-shot="hoje">
+            <h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="11.2" cy="12.8" r="4.4" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="10.6" cy="13.4" r="1.5" fill="currentColor"/></svg>Hoje</h3>
+            <strong>A semana inteira em três anéis.</strong>
+            <p>Força, zona 2 e alongamento, de fora para dentro. O próximo treino já chega com a carga sugerida para hoje, a partir do que você fez da última vez.</p>
+            <div class="shot"></div>
+          </li>
+          <li class="step" data-shot="treino">
+            <h3><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="6.5" width="3" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.75"/><rect x="15.5" y="6.5" width="3" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M8.5 12h7M3 12h2.5M18.5 12H21" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>Treino</h3>
+            <strong>Uma série de cada vez.</strong>
+            <p>Carga e repetições à mão, com a vez anterior ao lado. Terminou a série, você confirma como foi e o Niru cuida da progressão.</p>
+            <ul class="facts"><li>97,5 kg × 10</li><li>RIR 2</li><li>Esquerdo e direito</li></ul>
+            <div class="shot"></div>
+          </li>
+          <li class="step" data-shot="descanso">
+            <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 1 1-8.5 8.5M12 7.5V12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="6" r="1.5" fill="currentColor"/></svg>Descanso</h3>
+            <strong>Largue o celular no banco.</strong>
+            <p>O descanso conta na parte de baixo enquanto você ajusta a próxima série. Sem ninguém tocar na tela, ele cresce até ocupar tudo, para ler de longe.</p>
+            <div class="shot"></div>
+          </li>
+          <li class="step" data-shot="cardio">
+            <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h3.2l2.3-5.5 3.6 10 2.6-6.5 1 2h.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19.8" cy="13" r="1.5" fill="currentColor"/></svg>Cardio</h3>
+            <strong>Minutos em zona 2, contra a sua meta.</strong>
+            <p>Esteira, bicicleta, corrida e mais. Velocidade, eficiência por batimento e VO2máx estimado evoluem por modalidade.</p>
+            <ul class="facts"><li>7,6 km/h</li><li>86 de 105 min</li><li>Z2</li></ul>
+            <div class="shot"></div>
+          </li>
+          <li class="step" data-shot="alongar">
+            <h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1.5" fill="currentColor"/><path d="M9 12H3.5M6.2 9.3L3.5 12l2.7 2.7M15 12h5.5M17.8 9.3l2.7 2.7-2.7 2.7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Alongar</h3>
+            <strong>Sequências com tempo por postura.</strong>
+            <p>Monte a sua sequência uma vez. Depois é só seguir o timer: ele avisa com vibração quando trocar de postura.</p>
+            <div class="shot"></div>
+          </li>
+          <li class="step" data-shot="evolucao">
+            <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5h16M5 15.5l4.5-4 3.5 2.5 3.6-5.2" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18.2" cy="6.4" r="1.5" fill="currentColor"/></svg>Evolução</h3>
+            <strong>Evolução é curva, não medalha.</strong>
+            <p>e1RM de cada exercício, séries duras por músculo e recordes por repetição. Sem sequência de dias e sem lembrete para voltar.</p>
+            <div class="shot"></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="data" id="seus-dados" aria-labelledby="dados-titulo">
+      <header>
+        <h2 id="dados-titulo">Seus treinos ficam com você</h2>
+        <p>Não existe conta no Niru. Você escolhe onde guardar uma cópia.</p>
+      </header>
+
+      <div class="where">
+        <article>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="10.5" width="13" height="9.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          <h3>No celular</h3>
+          <p>Tudo funciona sem internet. Os treinos ficam num banco dentro do aparelho.</p>
+        </article>
+        <article>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 0 1 13-5.1M19.5 12a7.5 7.5 0 0 1-13 5.1M17.8 3.6V7h-3.4M6.2 20.4V17h3.4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>No seu Google Drive</h3>
+          <p>Se quiser, o Niru salva uma planilha na pasta Niru do seu Drive depois de cada treino. Ele só enxerga os arquivos que ele mesmo criou.</p>
+        </article>
+        <article>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4.5M8 8.2l4-3.7 4 3.7M5 13.5V18a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 18v-4.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Numa planilha</h3>
+          <p>Exporte um .xlsx para o WhatsApp, o e-mail ou uma pasta. Edite no Planilhas ou no Excel e importe de volta.</p>
+        </article>
+      </div>
+
+      <p class="nots">
+        <span>Sem anúncios.</span>
+        <span>Sem rastreamento.</span>
+        <span>Sem servidor do Niru.</span>
+        <a href="privacidade.html">Ler a política de privacidade</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <a class="brand" href="./" aria-label="Niru, página inicial">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="30.5" cy="33.5" r="18.5" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="29" cy="35" r="10.5" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="28" cy="36" r="4" fill="#F2992B"/></svg>
+      niru
+    </a>
+    <span>Caderno de treino para Android.</span>
+    <nav aria-label="Rodapé">
+      <a href="privacidade.html">Política de privacidade</a>
+      <a href="fonts/OFL-Estedad.txt">Fonte Estedad (OFL)</a>
+    </nav>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>

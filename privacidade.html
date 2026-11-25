@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidade do Niru</title>
+  <meta name="description" content="O que o Niru guarda, onde guarda e o que faz com o acesso ao seu Google Drive.">
+  <meta name="theme-color" content="#f5eee7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a100d" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="img/niru-simbolo.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/estedad.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem('niru-tema');
+      var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="top">
+    <a class="brand" href="./" aria-label="Niru, página inicial">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="30.5" cy="33.5" r="18.5" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="29" cy="35" r="10.5" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="28" cy="36" r="4" fill="#F2992B"/></svg>
+      niru
+    </a>
+    <nav aria-label="Seções">
+      <a class="keep" href="./">Página inicial</a>
+      <button class="theme" type="button" aria-label="Trocar tema">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
+        <span>Escuro</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="doc">
+    <h1>Política de privacidade</h1>
+    <p class="meta">Atualizada em 25 de novembro de 2026. Vale para o app Niru para Android.</p>
+
+    <div class="short">
+      <p><strong>Em poucas linhas</strong></p>
+      <ul>
+        <li>O Niru não tem conta, login, anúncios nem rastreamento.</li>
+        <li>Seus treinos ficam no seu celular. O desenvolvedor do Niru não recebe nenhum dado seu.</li>
+        <li>O backup no Google Drive é opcional e vai direto do seu celular para o seu Drive. O app só enxerga os arquivos que ele mesmo criou.</li>
+        <li>Você pode apagar tudo a qualquer momento: desinstalar o app apaga o banco do celular, e os arquivos no Drive são seus.</li>
+      </ul>
+    </div>
+
+    <h2>Quem é responsável</h2>
+    <p>O Niru é um app independente, feito por um desenvolvedor individual no Brasil, sem empresa por trás e sem fins comerciais nesta fase de teste. Dúvidas sobre esta política podem ser enviadas pela <a href="https://github.com/henriquecweiss/niru-app/issues">página de contato do projeto</a>.</p>
+
+    <h2>O que o app guarda no seu celular</h2>
+    <p>Para funcionar, o Niru grava num banco de dados dentro do próprio aparelho:</p>
+    <ul>
+      <li><strong>Treinos de força:</strong> exercícios, séries, carga, repetições, repetições em reserva (RIR), tempo de série e anotações.</li>
+      <li><strong>Cardio:</strong> modalidade, duração, distância, inclinação, frequência cardíaca média e máxima, esforço percebido e anotações.</li>
+      <li><strong>Alongamento:</strong> sequências, posturas e sessões feitas.</li>
+      <li><strong>Ajustes:</strong> metas da semana, dias de treino, zonas de frequência cardíaca e, se você informar, idade e frequência cardíaca de repouso e máxima, usadas só para calcular zonas e estimativas no próprio aparelho.</li>
+    </ul>
+    <p>Alguns desses dados são sobre a sua saúde. Eles não saem do celular, a não ser que você ligue o backup no Drive ou exporte uma planilha.</p>
+
+    <h2>O que o desenvolvedor recebe</h2>
+    <p>Nada. O Niru não tem servidor próprio, não usa ferramentas de análise de uso, não envia relatórios de erro e não exibe anúncios. Não há identificador de usuário nem de aparelho enviado a ninguém.</p>
+
+    <h2>Backup no Google Drive</h2>
+    <p>O backup é opcional e você o liga em Ajustes. Ao conectar, o Android mostra a tela de permissão do Google e você escolhe a conta.</p>
+
+    <h3>Que acesso o Niru pede</h3>
+    <p>Só a permissão <code>drive.file</code>, que o Google descreve como acesso apenas aos arquivos que o app criou ou que você abriu com ele. O Niru não consegue ver, ler nem mudar os outros arquivos do seu Drive.</p>
+
+    <h3>O que o Niru faz com esse acesso</h3>
+    <table>
+      <thead><tr><th>Dado do Google</th><th>Para quê</th></tr></thead>
+      <tbody>
+        <tr><td>Arquivos criados pelo Niru (a pasta Niru e as planilhas dentro dela)</td><td>Salvar uma planilha com seus treinos depois de cada treino e uma cópia por dia, e ler essas planilhas quando você pede para restaurar.</td></tr>
+        <tr><td>Endereço de e-mail da conta conectada</td><td>Mostrar em Ajustes qual conta está recebendo o backup. Fica só no seu celular.</td></tr>
+      </tbody>
+    </table>
+    <p>Os arquivos vão direto do seu celular para os servidores do Google, sem passar por nenhum servidor do Niru. O desenvolvedor não tem acesso ao seu Drive nem às planilhas.</p>
+
+    <h3>Uso limitado</h3>
+    <p>O uso e a transferência, para qualquer outro app, de informações recebidas das APIs do Google seguem a <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de uso limitado. O Niru não usa dados do Google para publicidade, não os vende, não os transfere a terceiros e não os usa para treinar modelos de inteligência artificial.</p>
+
+    <h3>Como desconectar</h3>
+    <p>Em Ajustes, toque em desconectar o Google Drive: o Niru revoga o acesso na hora. Você também pode remover o acesso em <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. As planilhas já salvas continuam no seu Drive até você apagá-las.</p>
+
+    <h2>Planilhas exportadas</h2>
+    <p>Exportar gera um arquivo .xlsx com seus dados. Para onde ele vai (WhatsApp, e-mail, uma pasta) é escolha sua, e a partir daí o arquivo segue as regras do app ou serviço que você usou.</p>
+
+    <h2>Permissões do Android</h2>
+    <table>
+      <thead><tr><th>Permissão</th><th>Por quê</th></tr></thead>
+      <tbody>
+        <tr><td>Internet</td><td>Só para o backup no Google Drive. O resto do app funciona sem rede.</td></tr>
+        <tr><td>Notificações</td><td>Mostrar o treino em andamento e avisar o fim do descanso. Não há lembretes para abrir o app.</td></tr>
+        <tr><td>Alarme exato</td><td>Avisar o fim do descanso no segundo certo, mesmo com a tela bloqueada.</td></tr>
+        <tr><td>Serviço em primeiro plano</td><td>Manter a notificação do treino atualizada enquanto ele está aberto.</td></tr>
+        <tr><td>Vibração</td><td>Avisar a contagem da série, o fim do descanso e a troca de postura.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Compartilhamento</h2>
+    <p>O Niru não compartilha, vende nem aluga dados com ninguém.</p>
+
+    <h2>Guarda e exclusão</h2>
+    <p>Os dados ficam no celular enquanto o app estiver instalado. Você pode apagar treinos dentro do app, e desinstalar o Niru apaga o banco inteiro. Backups no Drive e planilhas exportadas ficam onde você os guardou, sob o seu controle.</p>
+
+    <h2>Seus direitos</h2>
+    <p>Pela Lei Geral de Proteção de Dados (LGPD), você tem direito a acessar, corrigir, levar e apagar seus dados. Como tudo fica com você, esses direitos se exercem no próprio app: editar ou apagar registros, exportar a planilha, desconectar o Drive ou desinstalar. Para qualquer outra questão, use a página de contato acima.</p>
+
+    <h2>Crianças</h2>
+    <p>O Niru não é direcionado a menores de 13 anos.</p>
+
+    <h2>Mudanças nesta política</h2>
+    <p>Se esta política mudar, a nova versão fica nesta página com a data atualizada no topo. Mudanças no que o app faz com seus dados também aparecem na tela Privacidade, dentro do app.</p>
+  </main>
+
+  <footer class="foot">
+    <a class="brand" href="./" aria-label="Niru, página inicial">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="30.5" cy="33.5" r="18.5" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="29" cy="35" r="10.5" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="28" cy="36" r="4" fill="#F2992B"/></svg>
+      niru
+    </a>
+    <span>Caderno de treino para Android.</span>
+    <nav aria-label="Rodapé">
+      <a href="./">Página inicial</a>
+      <a href="fonts/OFL-Estedad.txt">Fonte Estedad (OFL)</a>
+    </nav>
+  </footer>
+
+  <script src="site.js" defer></script>
+</body>
+</html>
